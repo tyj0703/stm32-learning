@@ -2,7 +2,7 @@
 #define __BLUETOOTH_H
 
 void Bluetooth_Init(void);
-void BluetoothRun(void);
+void Bluetooth_Run(void);
 
 
 

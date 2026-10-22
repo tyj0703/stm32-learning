@@ -17,14 +17,14 @@
 #define Sensor_State_TooRight 				0x01
 #define Sensor_State_LittleRight 			0x02
 #define Sensor_State_LittleRight_2			0x03
-#define Sensor_State_TooLeft 				0x08
+#define Sensor_State_TooLeft 			   	0x08
 #define Sensor_State_LittleLeft 			0x04
 #define Sensor_State_LittleLeft_2			0x0C
 #define Sensor_State_Lost					0x00
 #define Sensor_State_Normal					0x06
 
-#define TRACK_BASE_SPEED   500      /* 基础速度，约 PWM 量程一半 */
-#define TRACK_OUT_MAX      400      /* PID 输出限幅，防止单侧反转 */
+#define TRACK_BASE_SPEED   350      /* 基础速度，约 PWM 量程一半 */
+#define TRACK_OUT_MAX      400      /* PID输出限幅，防止单侧反转 */
 #define TRACK_KP           150.0f
 #define TRACK_KI           0.0f     /* 循迹一般不用 I */
 #define TRACK_KD           40.0f
@@ -33,12 +33,14 @@
 
 #include "stm32f10x.h"
 
+
 void  Track_Init(void);
 void  Track_PID_Init(void);
 void  Track_PID_Update(void);
 void Track_Run(void);
-uint8_t Track_Read(void);
 float Track_GetError(void);
+uint8_t Track_Read(void);
+
 
 #endif
 

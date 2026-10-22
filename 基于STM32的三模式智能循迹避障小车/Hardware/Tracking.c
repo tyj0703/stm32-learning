@@ -7,6 +7,14 @@
 static PID_t  g_pid;
 static float  g_last_error = 0.0f;  /* 丢线时沿用上次误差 */
 
+
+void Track_PID_Init(void)
+{
+    PID_Init(&g_pid, TRACK_KP, TRACK_KI, TRACK_KD, TRACK_OUT_MAX);
+    g_last_error = 0.0f;
+}
+
+
 void Track_Init(void)
 {
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
@@ -18,6 +26,9 @@ void Track_Init(void)
 	
 	
 	GPIO_Init(GPIOB,&GPIO_InitStruct);
+	
+	Track_PID_Init();
+	
 }
 
 uint8_t Track_Read(void)
@@ -75,11 +86,6 @@ float Track_GetError(void)
 
 
 
-void Track_PID_Init(void)
-{
-    PID_Init(&g_pid, TRACK_KP, TRACK_KI, TRACK_KD, TRACK_OUT_MAX);
-    g_last_error = 0.0f;
-}
 
 void Track_PID_Update(void)
 {

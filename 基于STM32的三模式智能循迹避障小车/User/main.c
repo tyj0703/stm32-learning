@@ -1,5 +1,7 @@
 #include "stm32f10x.h"
 #include "APP.h"
+#include "DELAY.h"
+
 
 int main(void)
 {
@@ -7,7 +9,9 @@ int main(void)
 	while(1)
 	{
 		App_Run();
-	}		
+		Delay_ms(5);
+	}
+	
 }
 
 

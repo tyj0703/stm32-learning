@@ -17,7 +17,7 @@
 
 
 void Obstacle_Init(void);
-void Obstacle_AvoidRun(void);
+void Avoid_Run(void);
 uint16_t Obstacle_GetDistance(void);
 uint16_t MeasureAt(uint8_t angle);
 

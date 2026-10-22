@@ -10,10 +10,8 @@ void Bluetooth_Init(void)
 	HC05_Init();
 
 }
-void BluetoothRun(void)
-{
-	//OLEDÏÔÊ¾Ä£Ê½
-	
+void Bluetooth_Run(void)
+{	
 	
 	//À¶ÑÀÂß¼­
 	if(HC05_GetRxFlag()==1)
@@ -25,36 +23,47 @@ void BluetoothRun(void)
 			{
 				OLED_ShowChar(2,1,'F');
 				Motor_Forward(600);
-//				Delay_ms(500);
+				Delay_ms(300);
+				Motor_StopAll();
 				break;
 			}
 			case 'B':
 			{
 				OLED_ShowChar(2,1,'B');
 				Motor_Backward(600);
-//				Delay_ms(500);
+				Delay_ms(300);
+				Motor_StopAll();
+			
 				break;
 			}
 			case 'R':
 			{
 				OLED_ShowChar(2,1,'R');
 				Motor_TurnRight(600);
-//				Delay_ms(500);
+				Delay_ms(300);
+				Motor_StopAll();
+
 				break;
 			}
 			case 'L':
 			{
 				OLED_ShowChar(2,1,'L');
 				Motor_TurnLeft(600);
-//				Delay_ms(500);
+				Delay_ms(300);
+				Motor_StopAll();
+
 				break;
 			}
 			case 'S':
 			{
 				OLED_ShowChar(2,1,'S');
+				Delay_ms(300);
 				Motor_StopAll();
+
 				break;
 			}
+			default:
+				break;
 				
 		}
 

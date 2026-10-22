@@ -84,7 +84,7 @@ uint16_t MeasureAt(uint8_t angle)
     return d;
 }
 
-void Obstacle_AvoidRun(void)
+void Avoid_Run(void)
 {
     static uint8_t turnHold = 0;   // 转弯后保持直行的计数
     uint16_t dL, dM, dR;

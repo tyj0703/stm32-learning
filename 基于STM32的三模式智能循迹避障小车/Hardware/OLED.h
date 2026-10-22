@@ -1,8 +1,8 @@
 #ifndef __OLED_H
 #define __OLED_H
 
-#define OLED_SCL GPIO_Pin_8						//GPIOB
-#define OLED_SDA GPIO_Pin_9						//GPIOB
+#define OLED_SCL GPIO_Pin_6						//GPIOB
+#define OLED_SDA GPIO_Pin_7						//GPIOB
 #define OLED_I2C_Address	0x78				//µÿ÷∑
 
 
